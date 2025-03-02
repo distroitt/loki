@@ -24,7 +24,7 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: gitlab
+      chart: gitlab-runner
       version: "*"
       sourceRef:
         kind: HelmRepository
