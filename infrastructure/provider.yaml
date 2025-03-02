@@ -10,7 +10,6 @@ spec:
   channel: "-1002374923652"
   secretRef:
     name: telegram-token
-
 ---
 apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Alert
