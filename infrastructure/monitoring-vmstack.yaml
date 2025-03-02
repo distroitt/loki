@@ -36,6 +36,8 @@ spec:
       enabled: false
     kubeScheduler:
       enabled: false
+    vmagent:
+      enabled: false
     vmsingle:
       spec:
         retentionPeriod: 2w
