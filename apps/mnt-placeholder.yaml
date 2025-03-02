@@ -6,15 +6,10 @@ metadata:
   namespace: mnt-placeholder
 spec:
   interval: 30m
-  chart:
-    spec:
-      chart: mutex-app
-      version: "*"
-      sourceRef:
-        kind: OCIRepository
-        name: mutex-app
-        namespace: common
-      interval: 12h
+  chartRef:
+    kind: OCIRepository
+    name: mutex-app
+    namespace: common
   values:
     service:
       ports:
