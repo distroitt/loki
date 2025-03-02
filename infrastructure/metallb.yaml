@@ -24,12 +24,12 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: ingress-nginx
+      chart: metallb
       version: "*"
       sourceRef:
         kind: HelmRepository
-        name: ingress-nginx
-        namespace: ingress-nginx
+        name: metallb
+        namespace: metallb-system
       interval: 12h
   values:
     crds:
