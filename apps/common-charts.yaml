@@ -17,4 +17,4 @@ spec:
   secretRef:
     name: mutex-gitlab-cr
   ref:
-    tag: "v0.9"
+    tag: "v0.10"
