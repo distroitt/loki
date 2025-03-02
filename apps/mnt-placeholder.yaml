@@ -27,7 +27,7 @@ spec:
       enabled: true
       containers:
         backend:
-          image: ghcr.io/fcsan-bsuir/mnt-placeholder:v1.2.1
+          image: ghcr.io/fcsan-bsuir/mnt-placeholder:v1.1.1
           # image: nginx:latest
           # configMapPath: /usr/share/nginx/html
     imagePullSecrets:
