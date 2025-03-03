@@ -51,7 +51,7 @@ spec:
           configMapPath: /etc/solve
           env:
             - name: SOLVE_CONFIG
-              value: /etc/solve/server-config.json
+              value: /etc/solve/invoker-config.json
             - name: DB_NAME
               value: solve       
           envFrom:
