@@ -30,7 +30,7 @@ spec:
       enabled: true
       initContainers:
         solve-init-cgroup:
-          image: udovin/solve:master
+          image: &solve_image udovin/solve:master
           command: [ "/bin/sh" ]
           args:
             - -c
