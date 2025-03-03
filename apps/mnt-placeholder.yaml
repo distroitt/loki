@@ -109,10 +109,10 @@ spec:
       enabled: true
       className: "nginx"
       hosts:
-        # - host: olymp.bsuir.by
-        #   paths:
-        #     - path: /
-        #       pathType: ImplementationSpecific
+        - host: olymp.bsuir.by
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
         # - host: solve.bsuir.by
         #   paths:
         #     - path: /
@@ -127,7 +127,7 @@ spec:
         #       pathType: ImplementationSpecific
       tls:
         - hosts:
-          # - olymp.bsuir.by
+          - olymp.bsuir.by
           # - solve.bsuir.by
           - bit-cup.bsuir.by
           # - acm.bsuir.by

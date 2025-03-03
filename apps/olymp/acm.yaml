@@ -83,7 +83,7 @@ spec:
       enabled: false
 
     ingress:
-      enabled: true
+      enabled: false
       className: "nginx"
       hosts:
         - host: olymp.bsuir.by
@@ -93,7 +93,7 @@ spec:
               servicePort: *backend_port
         - host: olymp.bsuir.by
           paths:
-            - path: /static/
+            - path: /static(/|$)(.*)
               pathType: Prefix
               servicePort: *static_port
 
