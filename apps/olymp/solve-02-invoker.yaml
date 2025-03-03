@@ -65,6 +65,17 @@ spec:
             runAsUser: 1000
             runAsGroup: 1000
 
+    affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - fksis-compute-01
+
     volumes:
       - name: tmpfs
         emptyDir:
