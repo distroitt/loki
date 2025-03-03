@@ -36,6 +36,7 @@ spec:
       service:
         externalIPs:
           - 172.16.82.26
+          - 172.16.82.106
       podAnnotations:
         prometheus.io/scrape: "true" 
         prometheus.io/port: "10254" 
