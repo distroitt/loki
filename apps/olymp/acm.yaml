@@ -91,7 +91,7 @@ spec:
             - path: /
               pathType: Prefix
               servicePort: *backend_port
-            - path: /static(/|$)(.*)
+            - path: /static/
               pathType: Prefix
               servicePort: *static_port
       tls:
