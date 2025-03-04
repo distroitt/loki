@@ -23,7 +23,7 @@ spec:
         - &backend_port 8000 
         - &static_port 3000
 
-    backend_image: &backend_image ghcr.io/fcsan-bsuir/acm:v.0.0.1@sha256:e2db8e82a18aa1e832c4e27adfd3299ea3281e394cde5bdf799167e1ecfb807f
+    backend_image: &backend_image ghcr.io/fcsan-bsuir/acm:v.0.0.1
 
     replicaCount: 2
 
