@@ -125,8 +125,8 @@ spec:
           },
           "socket_file": "/tmp/solve-server.sock",
           "smtp": {
-            "host": "smtp.yandex.ru",
-            "port": 465,
+            "host": "mail.bsuir.by",
+            "port": 587,
             "email": {{ "{{" }} env "SMTP_EMAIL" | json {{ "}}" }},
             "password": {{ "{{" }} env "SMTP_PASSWORD" | json {{ "}}" }}
           },
