@@ -55,7 +55,7 @@ spec:
         apply-migrations: # FIXME: replace with pre-upgrade helm job
           image: *backend_image
           command: [ "python3" ]
-          args: [ "manage.py",  "migrate" ]
+          args: [ "manage.py",  "migrate", "--no-input" ]
           env: *django_env
           envFrom: *django_envFrom
       containers:
