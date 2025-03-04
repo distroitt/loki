@@ -48,6 +48,9 @@ spec:
           envFrom: &django_envFrom
             - secretRef: 
                 name: django-secret
+          volumeMounts:
+            - name: django-static
+              mountPath: /app/staticfiles
         apply-migrations: # FIXME: replace with pre-upgrade helm job
           image: *backend_image
           command: [ "python3" ]
@@ -72,9 +75,6 @@ spec:
           args: [ "config.wsgi:application", "--capture-output", "--enable-stdio-inheritance", "-b :8000" ]
           ports:
             - containerPort: *backend_port
-          volumeMounts:
-            - name: django-static
-              mountPath: /home/app/web/staticfiles
           env: *django_env
           envFrom: *django_envFrom
 
