@@ -142,8 +142,6 @@ spec:
             - path: /api/
               pathType: Prefix
               servicePort: *api_port
-        - host: solve.bsuir.by
-          paths:
             - path: /
               pathType: Prefix
               servicePort: *ui_port
