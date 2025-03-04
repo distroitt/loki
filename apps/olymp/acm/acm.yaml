@@ -118,8 +118,8 @@ spec:
       hosts:
         - host: *acm_host
           paths:
-            - path: /
-              pathType: Prefix
+            - path: /(.*)
+              pathType: ImplementationSpecific
               servicePort: *backend_port
             - path: /static(/|$)(.*)
               pathType: ImplementationSpecific
