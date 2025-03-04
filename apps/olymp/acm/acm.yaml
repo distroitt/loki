@@ -48,9 +48,12 @@ spec:
           envFrom: &django_envFrom
             - secretRef: 
                 name: django-secret
-          volumeMounts:
-            - name: django-static
-              mountPath: /app/staticfiles
+        apply-migrations: # FIXME: replace with pre-upgrade helm job
+          image: *backend_image
+          command: [ "python3" ]
+          args: [ "manage.py",  "migrate" ]
+          env: *django_env
+          envFrom: *django_envFrom
       containers:
         nginx-static:
           image: nginx:1.27.2
