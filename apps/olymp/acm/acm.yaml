@@ -112,16 +112,13 @@ spec:
     ingress:
       enabled: true
       className: "nginx"
-      annotations:
-        nginx.ingress.kubernetes.io/rewrite-target: /$2
-        nginx.ingress.kubernetes.io/proxy-next-upstream-tries: "10"
       hosts:
         - host: *acm_host
           paths:
-            - path: /(.*)
-              pathType: ImplementationSpecific
+            - path: /
+              pathType: Prefix
               servicePort: *backend_port
-            - path: /static(/|$)(.*)
+            - path: /static/
               pathType: ImplementationSpecific
               servicePort: *static_port
       tls:
