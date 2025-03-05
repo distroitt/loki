@@ -93,9 +93,9 @@ spec:
               path: /
               port: *backend_port
               scheme: HTTP
-            httpHeaders:
-              - name: Host
-                value: *acm_host
+              httpHeaders:
+                - name: Host
+                  value: *acm_host
             initialDelaySeconds: 3
             timeoutSeconds: 1
             periodSeconds: 10
