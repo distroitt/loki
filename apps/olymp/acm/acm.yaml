@@ -39,7 +39,7 @@ spec:
             - name: DJANGO_LOG_LEVEL
               value: info
             - name: DEBUG
-              value: "True"
+              value: "False"
             - name: PG_NAME
               value: acm
             - name: PG_HOST
