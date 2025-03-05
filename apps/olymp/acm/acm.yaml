@@ -123,16 +123,7 @@ spec:
             - path: /static(/|$)(.*)
               pathType: ImplementationSpecific
               servicePort: *static_port
-        - host: olymp.bsuir.by
-          paths:
-            - path: /()(.*) # FIXME: wtf is going there? dirty hot-fix to match rewrite-targer :)
-              pathType: ImplementationSpecific
-              servicePort: *backend_port
-            - path: /static(/|$)(.*)
-              pathType: ImplementationSpecific
-              servicePort: *static_port
       tls:
         - hosts:
           - *acm_host
-          - olymp.bsuir.by
           secretName: bsuir-tls
