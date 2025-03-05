@@ -47,7 +47,7 @@ spec:
             - name: PG_PORT
               value: "5432"
             - name: ALLOWED_HOSTS
-              value: http://acm.bsuir.by,https://acm.bsuir.by
+              value: acm.bsuir.by
             - name: CORS_ORIGINS
               value: http://acm.bsuir.by,https://acm.bsuir.by
           envFrom: &django_envFrom
