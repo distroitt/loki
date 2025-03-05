@@ -46,6 +46,10 @@ spec:
               value: main-db-cluster-rw.cnpg-database.svc.cluster.local
             - name: PG_PORT
               value: "5432"
+            - name: ALLOWED_HOSTS
+              value: http://acm.bsuir.by,https://acm.bsuir.by
+            - name: CORS_ORIGINS
+              value: http://acm.bsuir.by,https://acm.bsuir.by
           envFrom: &django_envFrom
             - secretRef: 
                 name: django-secret
