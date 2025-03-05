@@ -37,7 +37,7 @@ spec:
           args: [ "manage.py",  "collectstatic" ]
           env: &django_env
             - name: DJANGO_LOG_LEVEL
-              value: debug
+              value: info
             - name: DEBUG
               value: "True"
             - name: PG_NAME
