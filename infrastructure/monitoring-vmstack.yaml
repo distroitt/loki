@@ -49,10 +49,10 @@ spec:
             cpu: 500m
             memory: 512Mi
         storage:
-          storageClassName: csi-s3
+          storageClassName: local-storage
           resources:
             requests:
-              storage: 8Gi
+              storage: 4Gi
     grafana:
       resources:
         requests:
