@@ -127,3 +127,27 @@ spec:
       config:
         templates:
           - telegram.tmpl
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vmks-grafana-nginx
+  namespace: monitoring
+  labels:
+    grafana_dashboard: "true"
+  annotations:
+    grafana_folder: NGINX
+data:
+  request-handling-performance.json.url: "https://raw.githubusercontent.com/kubernetes/ingress-nginx/refs/heads/main/deploy/grafana/dashboards/request-handling-performance.json"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vmks-grafana-cloud-native-pg
+  namespace: monitoring
+  labels:
+    grafana_dashboard: "true"
+  annotations:
+    grafana_folder: Database
+data:
+  cloud-native-pg.json.url: "https://raw.githubusercontent.com/cloudnative-pg/grafana-dashboards/refs/heads/main/charts/cluster/grafana-dashboard.json"
