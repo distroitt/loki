@@ -83,6 +83,8 @@ spec:
           skip_org_role_sync: false
       dashboardProviders:
         dashboardproviders.yaml:
+          apiVersion: 1
+          providers:
           - name: 'grafana-dashboards-nginx'
             orgId: 1
             folder: 'NGINX'
