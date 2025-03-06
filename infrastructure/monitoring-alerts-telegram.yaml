@@ -28,8 +28,6 @@ spec:
     name: telegram
   eventSeverity: info
   eventSources: # FIXME: template this
-    - kind: Kustomization
-      name: '*'
     - kind: HelmRelease
       name: '*'
       namespace: acm
