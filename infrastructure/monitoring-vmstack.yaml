@@ -81,6 +81,21 @@ spec:
             contains(groups[*], '@fcsan-bsuir/devops') && 'Admin' || 
             'Viewer'
           skip_org_role_sync: false
+      dashboardProviders:
+        dashboardproviders.yaml:
+          - name: 'grafana-dashboards-nginx'
+            orgId: 1
+            folder: 'NGINX'
+            type: file
+            disableDeletion: true
+            editable: true
+            options:
+              path: /var/lib/grafana/dashboards/grafana-dashboards-nginx
+      dashboards:
+        grafana-dashboards-nginx:
+          request-handling-performance:
+            url: https://raw.githubusercontent.com/kubernetes/ingress-nginx/refs/heads/main/deploy/grafana/dashboards/request-handling-performance.json
+            token: ''
       envValueFrom:
         GITHUB_OAUTH_SECRET:
           secretKeyRef:
