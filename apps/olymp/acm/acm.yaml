@@ -38,8 +38,6 @@ spec:
           env: &django_env
             - name: DJANGO_LOG_LEVEL
               value: info
-            - name: DEBUG
-              value: "False"
             - name: PG_NAME
               value: acm
             - name: PG_HOST
