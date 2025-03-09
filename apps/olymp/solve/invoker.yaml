@@ -108,7 +108,7 @@ spec:
               "access_key_id": {{ "{{" }} env "ACCESS_KEY_ID" | json {{ "}}" }},
               "secret_access_key": {{ "{{" }} env "SECRET_ACCESS_KEY" | json {{ "}}" }},
               "endpoint": "https://storage.yandexcloud.net",
-              "bucket": "solve-testing",
+              "bucket": "solve-bsuir",
               "path_prefix": "testing/files/"
             }
           },
