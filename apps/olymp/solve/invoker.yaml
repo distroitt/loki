@@ -115,7 +115,7 @@ spec:
           "socket_file": "/tmp/solve-server.sock",
           "smtp": {
             "host": "mail.bsuir.by",
-            "port": 587,
+            "port": 465,
             "email": {{ "{{" }} env "SMTP_EMAIL" | json {{ "}}" }},
             "password": {{ "{{" }} env "SMTP_PASSWORD" | json {{ "}}" }}
           },
