@@ -90,6 +90,7 @@ spec:
             - containerPort: *backend_port
           env: *django_env
           envFrom: *django_envFrom
+          configMapPath: /app/templates/includes
           readinessProbe:
             httpGet:
               path: /
@@ -107,6 +108,43 @@ spec:
     volumes:
       - name: django-static
         emptyDir: {}
+
+    configMap:
+      enabled: true
+      ya_metrika.html: |
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function() {
+                    try {
+                        w.yaCounter92493863 = new Ya.Metrika({
+                            id:92493863,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true,
+                            webvisor:true
+                        });
+                    } catch(e) { }
+                });
+
+                var n = d.getElementsByTagName("script")[0],
+                    x = "https://mc.yandex.ru/metrika/watch.js",
+                    s = d.createElement("script"),
+                    f = function () { n.parentNode.insertBefore(s, n); };
+                for (var i = 0; i < document.scripts.length; i++) {
+                    if (document.scripts[i].src === x) { return; }
+                }
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = x;
+
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else { f(); }
+            })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/92493863" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
 
     persistence:
       enabled: false
