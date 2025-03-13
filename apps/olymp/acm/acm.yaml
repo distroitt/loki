@@ -90,7 +90,9 @@ spec:
             - containerPort: *backend_port
           env: *django_env
           envFrom: *django_envFrom
-          configMapPath: /app/templates/includes/ya_metrika.html
+          volumeMounts:
+            - mountPath: /app/templates/includes/ya_metrika.html
+              name: var-etc
           readinessProbe:
             httpGet:
               path: /
