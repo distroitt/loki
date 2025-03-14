@@ -104,11 +104,11 @@ spec:
           "storage": {
             "driver": "s3",
             "options": {
-              "region": "ru-central1",
+              "region": "eu-west-1",
               "access_key_id": {{ "{{" }} env "ACCESS_KEY_ID" | json {{ "}}" }},
               "secret_access_key": {{ "{{" }} env "SECRET_ACCESS_KEY" | json {{ "}}" }},
-              "endpoint": "https://storage.yandexcloud.net",
-              "bucket": "solve-bsuir",
+              "endpoint": "http://fksis-storage-01.bsuir.by:9091",
+              "bucket": "solve",
               "path_prefix": "testing/files/"
             }
           },
