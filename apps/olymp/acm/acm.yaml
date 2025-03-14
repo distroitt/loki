@@ -93,6 +93,7 @@ spec:
           volumeMounts:
             - mountPath: /app/templates/includes/ya_metrika.html
               name: var-etc
+              subPath: ya_metrika.html
           readinessProbe:
             httpGet:
               path: /
