@@ -119,6 +119,7 @@ spec:
               "access_key_id": {{ "{{" }} env "ACCESS_KEY_ID" | json {{ "}}" }},
               "secret_access_key": {{ "{{" }} env "SECRET_ACCESS_KEY" | json {{ "}}" }},
               "endpoint": "http://fksis-storage-01.bsuir.by:9091",
+              "use_path_style": true,
               "bucket": "solve",
               "path_prefix": "testing/files/"
             }
