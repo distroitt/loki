@@ -111,7 +111,7 @@ spec:
           },
           "security": {
             "password_salt": {{ "{{" }} env "PASSWORD_SALT" | json {{ "}}" }},
-            ""cookie_path": "/"
+            "cookie_path": "/"
           },
           "storage": {
             "driver": "s3",
