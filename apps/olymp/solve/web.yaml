@@ -110,7 +110,8 @@ spec:
             "site_url": "https://solve.bsuir.by"
           },
           "security": {
-            "password_salt": {{ "{{" }} env "PASSWORD_SALT" | json {{ "}}" }}
+            "password_salt": {{ "{{" }} env "PASSWORD_SALT" | json {{ "}}" }},
+            ""cookie_path": "/"
           },
           "storage": {
             "driver": "s3",
