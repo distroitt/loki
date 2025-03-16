@@ -1,0 +1,64 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: logging
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: loki
+  namespace: logging
+spec:
+  chart:
+    spec:
+      chart: loki
+      version: 5.8.0
+      sourceRef:
+        kind: HelmRepository
+        name: grafana
+        namespace: flux-system
+  interval: 1m
+  values:
+    config:
+      server:
+        http_listen_port: 3100
+      common:
+        storage:
+          s3:
+            endpoint: "http://fksis-storage-01.bsuir.by:9091"
+            access_key_id: "BEIvvI42CLLZAGfTlwHU"
+            secret_access_key: "ri9Knlu468xxgTDaKInIZxQ8JleSMeg4z1jOIQ6T"
+            bucketnames: "loki-logs"         
+            insecure: true                   
+        path_prefix: /data                   
+      ingester:
+        wal:
+          enabled: false
+        lifecycler:
+          ring:
+            kvstore:
+              store: inmemory
+      limits_config:
+        enforce_metric_name: false
+      schema_config:
+        configs:
+          - from: 2020-10-24
+            store: boltdb-shipper
+            object_store: s3
+            schema: v11
+            index:
+              prefix: index_
+              period: 24h
+      storage_config:
+        boltdb_shipper:
+          shared_store: s3
+          active_index_directory: /data/index
+          cache_location: /data/boltdb-cache
+    resources:
+      requests:
+        memory: 512Mi
+        cpu: 250m
+      limits:
+        memory: 1Gi
+        cpu: 500m
