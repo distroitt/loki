@@ -12,12 +12,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: loki
-      version: 5.8.0
-      sourceRef:
-        kind: HelmRepository
-        name: grafana
-        namespace: flux-system
+      chart: https://grafana.github.io/helm-charts/loki-5.8.0.tgz
   interval: 1m
   values:
     config:
