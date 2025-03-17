@@ -97,6 +97,8 @@ spec:
         tls:
           - hosts:
             - olymp.bsuir.by
+            secretName: bsuir-tls
+
     alertmanager:
       templates:
         telegram.tmpl: |-
