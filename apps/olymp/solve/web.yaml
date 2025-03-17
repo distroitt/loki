@@ -153,3 +153,11 @@ spec:
         - hosts:
           - solve.bsuir.by
           secretName: bsuir-tls
+
+resources:
+  limits:
+    cpu: 1
+    memory: 1024Mi
+  requests:
+    cpu: 500m
+    memory: 256Mi
