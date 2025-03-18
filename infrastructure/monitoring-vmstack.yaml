@@ -102,7 +102,7 @@ spec:
     alertmanager:
       spec:
         configSecret: vkms-alertmanager-config
-      templates:
+      templateFiles:
         telegram.tmpl: |-
           {{ define "alert_list" }}{{ range . }}
           🪪 <b>{{ .Labels.alertname }}</b>
@@ -115,7 +115,7 @@ spec:
           {{- if .Annotations.description }}
           📖 {{ .Annotations.description }}{{ end }}
           {{ end }}
-          🛠 <a href="https://olymp.bsuir.by/i/grafana">Grafana</a> 💊
+          🛠 <a href="https://olymp.bsuir.by/i/grafana">Grafana</a>
           {{ end }}
 
           {{ define "telegram.message" }}
