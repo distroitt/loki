@@ -40,3 +40,6 @@ spec:
     - kind: HelmRelease
       name: '*'
       namespace: mnt-placeholder
+    - kind: HelmRelease
+      name: '*'
+      namespace: cnpg-database
