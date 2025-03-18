@@ -38,6 +38,14 @@ spec:
       enabled: false
     vmagent:
       enabled: true
+      spec:
+        resources:
+          limits:
+            cpu: 256m
+            memory: 2560Mi
+          requests:
+            cpu: 128m
+            memory: 128Mi
     vmsingle:
       spec:
         retentionPeriod: 2w
