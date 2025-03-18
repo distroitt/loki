@@ -31,3 +31,23 @@ spec:
         name: cnpg
         namespace: cnpg-system
       interval: 12h
+---
+apiVersion: operator.victoriametrics.com/v1beta1
+kind: VMPodScrape
+metadata:
+  labels:
+    app.kubernetes.io/instance: victoria-metrics
+  name: cnpg-controller-manager
+  namespace: cnpg-system
+spec:
+  podMetricsEndpoints:
+    - port: metrics
+      scheme: http
+      scrapeTimeout: 120s
+      interval: 60s
+      relabelConfigs:
+        - target_label: job
+          replacement: cloudnative-pg
+  selector:
+    matchLabels:
+     app.kubernetes.io/name: cloudnative-pg
