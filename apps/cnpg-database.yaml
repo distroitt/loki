@@ -48,16 +48,21 @@ spec:
           - host all all all md5
 ---
 apiVersion: operator.victoriametrics.com/v1beta1
-kind: VMServiceScrape
+kind: VMPodScrape
 metadata:
-  name: cnpg-database-main-db
+  labels:
+    app.kubernetes.io/instance: victoria-metrics
+  name: cnpg-ha-metrics
   namespace: cnpg-database
 spec:
-  endpoints:
+  podMetricsEndpoints:
     - port: metrics
-  namespaceSelector:
-    matchNames:
-      - cnpg-database
+      scheme: http
+      scrapeTimeout: 120s
+      interval: 60s
+      relabelConfigs:
+        - target_label: job
+          replacement: cnpg-ha-metrics
   selector:
     matchLabels:
-      cnpg.io/cluster: main-db-cluster
+     cnpg.io/cluster: main-db-cluster
