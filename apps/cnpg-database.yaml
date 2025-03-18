@@ -46,3 +46,18 @@ spec:
       postgresql:
         pg_hba:
           - host all all all md5
+---
+apiVersion: operator.victoriametrics.com/v1beta1
+kind: VMServiceScrape
+metadata:
+  name: cnpg-database-main-db
+  namespace: cnpg-database
+spec:
+  endpoints:
+    - port: metrics
+  namespaceSelector:
+    matchNames:
+      - cnpg-database
+  selector:
+    matchLabels:
+      cnpg.io/cluster: main-db-cluster
