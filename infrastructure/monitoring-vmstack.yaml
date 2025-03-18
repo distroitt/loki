@@ -95,6 +95,11 @@ spec:
           secretKeyRef:
             name: github-oauth
             key: client_secret
+      vmScrape:
+        spec:
+          endpoints:
+            - port: '{{ .Values.grafana.service.portName }}'
+              path: "/i/grafana/metrics"
       ingress:
         enabled: true
         path: /i/grafana
