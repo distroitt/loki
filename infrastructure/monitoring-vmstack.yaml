@@ -100,6 +100,8 @@ spec:
             secretName: bsuir-tls
 
     alertmanager:
+      spec:
+        configSecret: vkms-alertmanager-config
       templates:
         telegram.tmpl: |-
           {{ define "alert_list" }}{{ range . }}
@@ -126,9 +128,7 @@ spec:
           {{ template "alert_list" .Alerts.Resolved }}
           {{ end }}
           {{ end }}
-      config:
-        templates:
-          - telegram.tmpl
+
 ---
 apiVersion: v1
 kind: ConfigMap
