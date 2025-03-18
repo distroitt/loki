@@ -43,10 +43,10 @@ spec:
         retentionPeriod: 2w
         resources:
           limits:
-            cpu: 1
-            memory: 1024Mi
+            cpu: 256m
+            memory: 1280Mi
           requests:
-            cpu: 500m
+            cpu: 128m
             memory: 512Mi
         storage:
           storageClassName: local-path
