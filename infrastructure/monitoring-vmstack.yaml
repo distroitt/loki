@@ -100,19 +100,6 @@ spec:
           endpoints:
             - port: '{{ .Values.grafana.service.portName }}'
               path: "/i/grafana/metrics"
-      ingress:
-        enabled: true
-        path: /i/grafana
-        ingressClassName: nginx
-        annotations:
-          nginx.ingress.kubernetes.io/affinity: "cookie"
-        hosts:
-          - olymp.bsuir.by
-        tls:
-          - hosts:
-            - olymp.bsuir.by
-            secretName: bsuir-tls
-
     alertmanager:
       spec:
         configSecret: vkms-alertmanager-config
