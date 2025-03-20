@@ -72,7 +72,7 @@ spec:
       defaultDashboardsTimezone: Europe/Minsk
       grafana.ini:
         server:
-          domain: olymp.bsuir.by
+          domain: localhost
           root_url: "%(protocol)s://%(domain)s/i/grafana"
           serve_from_sub_path: true
         auth.github:
